@@ -6,13 +6,97 @@
     android:layout_height="match_parent"
     tools:context="com.mailon2.convertidormonedas.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <RelativeLayout
+        android:layout_width="368dp"
+        android:layout_height="495dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/textViewMs1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/radioButtonColones"
+            android:layout_marginTop="23dp"
+            android:layout_marginStart="5dp"
+            android:text="Seleccione la conversión deseada:" />
+
+        <EditText
+            android:id="@+id/editTextCantidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/radioButtonDolares"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:ems="10"
+            android:hint="Monto a convertir"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/textViewM3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/editTextResultado"
+            android:layout_below="@+id/editTextCantidad"
+            android:layout_marginTop="39dp"
+            android:layout_marginStart="5dp"
+            android:text="Resultado:" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textViewMs1"
+            android:layout_below="@+id/textViewMs1"
+            android:layout_marginTop="17dp">
+
+            <RadioButton
+                android:id="@+id/radioButtonColones"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textViewMs1"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1"
+                android:text="Colones a Dolares" />
+
+            <RadioButton
+                android:id="@+id/radioButtonDolares"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textViewM3"
+                android:layout_below="@+id/radioButtonColones"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1"
+                android:text="Dolares a Colones" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/buttonConvertir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="49dp"
+            android:onClick="realizarConversion"
+            android:text="Convertir" />
+
+        <TextView
+            android:id="@+id/textViewResultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textViewM3"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="15dp"
+            android:text="" />
+
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
