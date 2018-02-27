@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }else{
-            Toast.makeText(this, "Sin seleccionar conversion", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Sin seleccionar conversion.", Toast.LENGTH_LONG).show();
         }
 
     }
